@@ -1,6 +1,6 @@
-# JOB Recruitment Portal
+# Job Recruitment Portal
 
 Developed By:
 Nitesh 20208087
-Abhishek Agarwal
-Kartik Khandelwal
+Pawan Kumar Yadav 20204135 
+Kartik Khandelwal 20204094
