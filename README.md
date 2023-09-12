@@ -1,3 +1,6 @@
-# WEBSTER-2020
+# JOB Recruitment Portal
 
-Team Name: Run_time_Terror
+Developed By:
+Nitesh 20208087
+Abhishek Agarwal
+Kartik Khandelwal
