@@ -1,0 +1,114 @@
+<%- include('partials/header') %>
+<style>
+  body{
+  background-image: url("images/Back.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  }
+</style>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen"><b>Register Student</b></button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')"><b>Register Recruiter</b></button>
+</div>
+
+
+<div id="London" class="tabcontent">
+<!-- Student Start -->
+<div class="container mt-5" style="align-items: center;">
+  <h1 class="my-5">Register As Student</h1>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /register route -->
+          <form action="/student_register" method="POST">
+            <div class="form-group">
+              <label for="email"><b>Email Address</b></label>
+              <input type="email" class="form-control" name="username" placeholder="Enter Your Personal Email Address">
+            </div>
+            <div class="form-group">
+              <label for="password"><b>Password</b></label>
+              <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-dark">Register</button>
+            <input type="hidden" name="IDENTITY" value="STD">
+          </form>
+
+        </div>
+      </div>
+    </div>
+    
+ 
+      <div class="col-sm-12" style="margin-top: 20px;">
+        <div class="card social-block" style="width: 30%;">
+          <div class="card-body btn-google">
+            <a class="btn btn-block" href="/auth/google" role="button" style="color: white">
+              <i class="fab fa-google" style="color: white"></i>
+              Sign Up with Google
+            </a>
+          </div>
+        </div>
+      </div>
+    
+
+  </div>
+</div>
+<!-- Student End -->
+</div>   
+
+<div id="Paris" class="tabcontent">
+  <!-- Recruiter panel -->
+
+  <div class="container mt-5">
+    <h1 class="my-5">Register As Recruiter</h1>
+  
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+  
+            <!-- Makes POST request to /register route -->
+            <form action="/recruiter_register" method="POST">
+              <div class="form-group">
+                <label for="email"><b>Email Address</b></label>
+                <input type="email" class="form-control" name="username" placeholder="Enter Your Personal Email Address">
+              </div>
+              <div class="form-group">
+                <label for="password"><b>Password</b></label>
+                <input type="password" class="form-control" name="password" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-dark">Register</button>
+              <input type="hidden" name="IDENTITY" value="RCT">
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+<!-- Recruiter End  -->
+</div>
+
+<script>
+  function openCity(evt, cityName) { 
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+</script>
+
+<%- include('partials/header') %>
